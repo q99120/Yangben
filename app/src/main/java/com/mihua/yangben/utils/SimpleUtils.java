@@ -70,6 +70,60 @@ public class SimpleUtils {
         return src;
     }
 
+    /**
+     * 累加和校验，并取反
+     */
+    public static String makeCheckSum(String data) {
+        if (data == null || data.equals("")) {
+            return "";
+        }
+        int total = 0;
+        int len = data.length();
+        int num = 0;
+        while (num < len) {
+            String s = data.substring(num, num + 2);
+            Log.e("获取", "校验: " + s);
+            total += Integer.parseInt(s, 16);
+            Log.e("获取", "校验16: " + total);
+            num = num + 2;
+        }
+
+        //用256求余最大是255，即16进制的FF
+        int mod = total % 256;
+        if (mod == 0) {
+            return "FF";
+        } else {
+            String hex = Integer.toHexString(mod).toUpperCase();
+
+            Log.e("获取", "取反前校验位: " + hex);
+            //十六进制数取反结果
+            hex = parseHex2Opposite(hex);
+            return hex;
+        }
+    }
+
+    /**
+     * 累加十六进制
+     */
+    public static String makeCheck16(String data) {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (data == null || data.equals("")) {
+            return "";
+        }
+        int total = 0;
+        int len = data.length();
+        int num = 0;
+        while (num < len) {
+            String s = data.substring(num, num + 2);
+            int i = Integer.valueOf(s);
+            String hex = Integer.toHexString(i);
+            Log.e("获取", "转16: " + hex);
+            num = num + 2;
+            hex = (hex.length() < 2 ? "0" + hex : hex);
+            stringBuilder.append(hex);
+        }
+        return stringBuilder.toString();
+    }
 
     /**
      * 取反
@@ -151,24 +205,23 @@ public class SimpleUtils {
 
 
     //根据Json数据转换为16进制
-    public static String jsonTohex(String datas, int flag) {
+    public static String jsonTohex(String datas) {
         StringBuilder stringBuilder = new StringBuilder();
-        String hexjson = null;
-        JSONArray jsonarray = null;
-        try {
-            jsonarray = new JSONArray(datas);
-            JSONObject info = jsonarray.getJSONObject(flag);
-            int result = info.getInt("solven_num");
-            hexjson = Integer.toHexString(result);
-//            String hh = "0x";
-//            if (hexjson.length() < 2) {
-//                stringBuilder.append(hh).append(0).append(hexjson);
-//            }else {
-//                stringBuilder.append(hh).append(hexjson);
-//            }
-        } catch (JSONException e) {
-            e.printStackTrace();
+        int i = Integer.valueOf(datas);
+        String hexStr = Integer.toHexString(i);
+        if (hexStr.length() < 2) {
+            stringBuilder.append(0).append(hexStr);
+        } else {
+            stringBuilder.append(hexStr);
         }
-        return hexjson;
+        return stringBuilder.toString();
+    }
+
+    //补0
+    public static String json0(String datas) {
+        datas = (datas.length() < 2 ? "0" + datas : datas);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(datas);
+        return stringBuilder.toString();
     }
 }

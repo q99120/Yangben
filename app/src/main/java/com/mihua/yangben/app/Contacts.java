@@ -17,8 +17,8 @@ public class Contacts {
             "{\"solven_name\":\"氢氧化钠用量(ml)\",\"solven_num\":6},{\"solven_name\":\"PBS缓冲液用量(ml)\",\"solven_num\":7}," +
             "{\"solven_name\":\"再次搅拌转速(RPM)\",\"solven_num\":8},{\"solven_name\":\"再次搅拌时间(分钟)\",\"solven_num\":9}," +
             "{\"solven_name\":\"甲醇用量(ml)\",\"solven_num\":10},{\"solven_name\":\"排液量1(ml)\",\"solven_num\":11}," +
-            "{\"solven_name\":\"水用量(ml)\",\"solven_num\":12},{\"solven_name\":\"排液量2(ml)\",\"solven_num\":13}," +
-            "{\"solven_name\":\"上样用量(ml)\",\"solven_num\":14},{\"solven_name\":\"水用量(ml)\",\"solven_num\":15}," +
+            "{\"solven_name\":\"水用量1(ml)\",\"solven_num\":12},{\"solven_name\":\"排液量2(ml)\",\"solven_num\":13}," +
+            "{\"solven_name\":\"上样用量(ml)\",\"solven_num\":14},{\"solven_name\":\"水用量2(ml)\",\"solven_num\":15}," +
             "{\"solven_name\":\"排液量4(ml)\",\"solven_num\":16},{\"solven_name\":\"乙酸乙酯用量(ml)\",\"solven_num\":17}," +
             "{\"solven_name\":\"排液量5(ml)\",\"solven_num\":18},{\"solven_name\":\"浓缩温度(摄氏度)\",\"solven_num\":25}," +
             "{\"solven_name\":\"吹气温度(摄氏度)\",\"solven_num\":26},{\"solven_name\":\"浓缩时间(分钟)\",\"solven_num\":27}]\n";

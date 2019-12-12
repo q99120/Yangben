@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        android:fillViewport="true"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_cons_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="样品罐："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_cons_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/view1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_cons_name" />
+
+
+            <TextView
+                android:id="@+id/tv_spe_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="SPE柱："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
+            <TextView
+                android:id="@+id/tv_spe_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view1" />
+
+            <TextView
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spe_num" />
+
+
+            <TextView
+                android:id="@+id/tv_hcl_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="盐酸："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view2" />
+
+            <TextView
+                android:id="@+id/tv_hcl_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view2" />
+
+            <TextView
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_hcl_name" />
+
+
+            <TextView
+                android:id="@+id/tv_dmso_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="DMSO："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view3" />
+
+            <TextView
+                android:id="@+id/tv_dmso_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view3" />
+
+            <TextView
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_dmso_num" />
+
+
+            <TextView
+                android:id="@+id/tv_qyhn_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="氢氧化钠："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view4" />
+
+            <TextView
+                android:id="@+id/tv_qyhn_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view4" />
+
+            <TextView
+                android:id="@+id/view5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_qyhn_num" />
+
+
+            <TextView
+                android:id="@+id/tv_pbs_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="PBS缓冲液："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view5" />
+
+            <TextView
+                android:id="@+id/tv_pbs_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view5" />
+
+            <TextView
+                android:id="@+id/view6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pbs_num" />
+
+
+            <TextView
+                android:id="@+id/tv_methanol_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="甲醇："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view6" />
+
+            <TextView
+                android:id="@+id/tv_methanol_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view6" />
+
+            <TextView
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_methanol_name" />
+
+
+            <TextView
+                android:id="@+id/tv_waterpu_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="净化水："
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view7" />
+
+            <TextView
+                android:id="@+id/tv_waterpu_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view7" />
+
+            <TextView
+                android:id="@+id/view8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_waterpu_num" />
+
+
+            <TextView
+                android:id="@+id/tv_suction_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="吸头"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view8" />
+
+            <TextView
+                android:id="@+id/tv_suction_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view8" />
+
+            <TextView
+                android:id="@+id/view9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_suction_name" />
+
+
+            <TextView
+                android:id="@+id/tv_ethyl_acetate_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="乙酸乙酯"
+                android:textColor="@color/black"
+                app:layout_constraintLeft_toLeftOf="@id/tv_cons_name"
+                app:layout_constraintTop_toBottomOf="@id/view9" />
+
+            <TextView
+                android:id="@+id/tv_ethyl_acetate_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:text="检测次数："
+                android:textColor="@color/black"
+                app:layout_constraintRight_toRightOf="@id/tv_cons_num"
+                app:layout_constraintTop_toBottomOf="@id/view9" />
+
+            <TextView
+                android:id="@+id/view10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dividing_line"
+                android:layerType="software"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ethyl_acetate_name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

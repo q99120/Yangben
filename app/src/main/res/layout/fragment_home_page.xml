@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/com_bgs">
+    <!-- -->
+
+
+    <!--<TextView
+        android:id="@+id/id_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="专家讲课"
+        android:background="@color/main_color"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/null_color"
+        android:visibility="visible"
+        >
+
+        <VideoView
+            android:id="@+id/id_videoview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/null_color" />
+
+        <ImageView
+            android:id="@+id/video_thumbnail_xcd"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/null_color"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@color/null_color">
+
+            <com.zlc.video.VideoController
+                android:id="@+id/id_video_controller"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/null_color" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="#000000" />
+
+    </RelativeLayout>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+
+        >
+        <!--view部分-->
+        <!--    <LinearLayout
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                >-->
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+          >-->
+        <!--view部分-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+
+            <!--view上部分-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.youth.banner.Banner
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="gone"
+                            app:banner_default_image="@mipmap/loginbg"
+                            app:image_scale_type="fit_xy" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/loginbg" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+                <!--view下部分-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <GridView
+                            android:id="@+id/grid"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_centerInParent="true"
+                            android:numColumns="4" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--数据展示部分-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="当日样本处理记录 (0)"
+                android:textColor="@color/colorPrimary" />
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp">
+
+                <com.scwang.smart.refresh.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcl_historylist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.scwang.smart.refresh.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

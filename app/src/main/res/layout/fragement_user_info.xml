@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <!-- 头像信息-->
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/com_bgs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/admin" />
+
+            <TextView
+                android:id="@+id/userNames"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/deptNames"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/updataAvatar"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="修改"
+            android:textSize="18sp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/green" />
+    </RelativeLayout>
+    <!--文字信息-->
+    <LinearLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="用户ID"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:textSize="18sp"
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="姓名"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:id="@+id/name"
+                android:textSize="18sp"
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="警号"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:id="@+id/policeNo"
+                android:textSize="18sp"
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="部门"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:id="@+id/deptName"
+                android:textSize="18sp"
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="职务"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:id="@+id/duties"
+                android:textSize="18sp"
+                android:layout_marginLeft="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/lights_gray" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登录密码"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:textSize="18sp"
+                android:layout_marginLeft="130dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="******"
+                android:textColor="@color/lights_gray" />
+
+            <TextView
+                android:id="@+id/information"
+                android:textSize="18sp"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="修改"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/green" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/com_bgs">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/view_stub"
+        android:background="@color/white" />
+
+
+    <!--通管信息-->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_ch_info"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="通管信息"
+            android:textColor="@color/rad" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:background="@color/green" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_set_ch"
+        app:layout_constraintTop_toBottomOf="@+id/ll_ch_info"
+        app:layout_constraintLeft_toLeftOf="@id/ll_ch_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tests"
+            app:layout_constraintLeft_toLeftOf="@+id/ll_ch_info"
+            app:layout_constraintTop_toBottomOf="@+id/ll_ch_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请设置待处理样本的数量(1~12 ):"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/btnDecrease"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/less" />
+
+        <EditText
+            android:id="@+id/etAmount"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:digits="0123456789"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/btnIncrease"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/plus" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_sample_info"
+        app:layout_constraintLeft_toLeftOf="@+id/ll_ch_info"
+        app:layout_constraintTop_toBottomOf="@+id/ll_set_ch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="样本信息"
+            android:textColor="@color/rad" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:background="@color/green" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_set_sample"
+        app:layout_constraintTop_toBottomOf="@+id/ll_sample_info"
+        app:layout_constraintLeft_toLeftOf="@id/ll_sample_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/test1s"
+            app:layout_constraintLeft_toLeftOf="@+id/ll_ch_info"
+            app:layout_constraintTop_toBottomOf="@+id/ll_ch_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择要处理的样本:"
+            android:textColor="@color/black" />
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="right|center_vertical"-->
+        <!--            android:layout_marginRight="10dp"-->
+        <!--            android:src="@mipmap/arrow" />-->
+
+        <Spinner
+            android:id="@+id/spread_project"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/dialog_input_bg"
+            android:dropDownHorizontalOffset="50dp"
+            android:dropDownVerticalOffset="30dp"
+            android:entries="@array/medal"
+            android:spinnerMode="dropdown" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/determine"
+        app:layout_constraintTop_toBottomOf="@id/ll_set_sample"
+        app:layout_constraintLeft_toLeftOf="@id/ll_set_sample"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_bg"
+        android:text="确定" />
+
+    <RelativeLayout
+        app:layout_constraintVertical_bias="0.6"
+        android:layout_marginTop="10dp"
+        app:layout_constraintRight_toLeftOf="@+id/view_stub"
+        app:layout_constraintLeft_toLeftOf="@id/ll_ch_info"
+        app:layout_constraintTop_toBottomOf="@+id/determine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <LinearLayout
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="通道号"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="样本名称"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="项目信息"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="操作"
+                    android:textColor="@color/black" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/black" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/black" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/head"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/black" />
+    </RelativeLayout>
+
+    <ViewStub
+        android:id="@+id/view_stub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <!--通管信息-->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/ll_tips_info"
+        app:layout_constraintLeft_toRightOf="@id/view_stub"
+        app:layout_constraintTop_toTopOf="@id/ll_ch_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="提示信息"
+            android:textColor="@color/rad" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:background="@color/green" />
+    </LinearLayout>
+
+    <!--通管信息-->
+    <LinearLayout
+        android:id="@+id/ll_warn_info"
+        app:layout_constraintLeft_toRightOf="@id/view_stub"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="警报信息"
+            android:textColor="@color/rad" />
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:background="@color/green" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

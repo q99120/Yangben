@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/left"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改用户信息"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lights_gray" />
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户ID"
+            android:textColor="@color/lights_gray" />
+
+        <TextView
+            android:id="@+id/userName"
+            android:textSize="18sp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:textColor="@color/lights_gray" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/lights_gray"
+        android:layout_marginBottom="10dp" />
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/lights_gray" />
+
+        <EditText
+            android:id="@+id/name"
+            android:textSize="18sp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入姓名"
+            android:textColorHint="@color/lights_gray"
+            android:textColor="@color/lights_gray" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/lights_gray" />
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="警号"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/lights_gray" />
+
+        <EditText
+            android:id="@+id/policeNo"
+            android:textSize="18sp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入警号"
+            android:textColorHint="@color/lights_gray"
+            android:textColor="@color/lights_gray" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/lights_gray" />
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="部门"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/lights_gray" />
+
+        <EditText
+            android:id="@+id/deptName"
+            android:textSize="18sp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入部门名称"
+            android:textColorHint="@color/lights_gray"
+            android:textColor="@color/lights_gray" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/lights_gray" />
+
+    <LinearLayout
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="职务"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/lights_gray" />
+
+        <EditText
+            android:id="@+id/duties"
+            android:textSize="18sp"
+            android:layout_marginLeft="60dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入职务"
+            android:textColorHint="@color/lights_gray"
+            android:textColor="@color/lights_gray" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/lights_gray" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="保  存"
+            android:textSize="18sp"
+            android:background="@drawable/button_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp" />
+    </RelativeLayout>
+</LinearLayout>

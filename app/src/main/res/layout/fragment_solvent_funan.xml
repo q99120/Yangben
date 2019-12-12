@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/com_bgs"
+    tools:context=".ui.activity.HomeActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/green"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_acid_ph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:text="呋喃设置"
+        android:textColor="@color/rad"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title_hcl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="盐酸(0~99 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_title_fywd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="孵育温度(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_hcl" />
+
+    <TextView
+        android:id="@+id/tv_title_fysj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="孵育时间(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_fywd" />
+
+    <TextView
+        android:id="@+id/tv_title_jbzs1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="搅拌转速1(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_fysj" />
+
+    <TextView
+        android:id="@+id/tv_title_jbsj1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="搅拌时间1(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_jbzs1" />
+
+    <TextView
+        android:id="@+id/tv_title_naoh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="氢氧华纳(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_jbsj1" />
+
+    <TextView
+        android:id="@+id/tv_title_pbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="PBS缓冲液(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_naoh" />
+
+    <TextView
+        android:id="@+id/tv_title_jbzs2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="搅拌转速2(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_pbs" />
+
+    <TextView
+        android:id="@+id/tv_title_jbsj2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="搅拌时间2(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_jbzs2" />
+
+
+    <TextView
+        android:id="@+id/tv_title_ch3oh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="甲醇(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_jbsj2" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_hcl"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hcl"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_hcl" />
+
+
+    <EditText
+        android:id="@+id/et_hcl"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/et_bgs"
+        android:inputType="number"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hcl"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hcl" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_hcl"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/et_hcl"
+        app:layout_constraintLeft_toRightOf="@id/et_hcl" />
+
+
+    <TextView
+        android:id="@+id/tv_title_hhzy1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="活化正压1(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageView
+        android:id="@+id/btn_increase_fywd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_fywd"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_fywd" />
+
+
+    <EditText
+        android:id="@+id/et_fywd"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_fywd"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_fywd" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_fywd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_fywd"
+        app:layout_constraintLeft_toRightOf="@id/et_fywd" />
+
+    <ImageView
+        android:id="@+id/btn_increase_fysj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_fysj"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_fysj" />
+
+
+    <EditText
+        android:id="@+id/et_fysj"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_fysj"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_fysj" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_fysj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_fysj"
+        app:layout_constraintLeft_toRightOf="@id/et_fysj" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_jbzs1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbzs1"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jbzs1" />
+
+
+    <EditText
+        android:id="@+id/et_jbzs1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbzs1"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_jbzs1" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jbzs1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbzs1"
+        app:layout_constraintLeft_toRightOf="@id/et_jbzs1" />
+
+    <ImageView
+        android:id="@+id/btn_increase_jbsj1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbsj1"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jbsj1" />
+
+    <EditText
+        android:id="@+id/et_jbsj1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbsj1"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_jbsj1" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jbsj1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbsj1"
+        app:layout_constraintLeft_toRightOf="@id/et_jbsj1" />
+
+    <ImageView
+        android:id="@+id/btn_increase_pbs"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pbs"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_pbs" />
+
+    <EditText
+        android:id="@+id/et_pbs"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pbs"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_pbs" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_pbs"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_pbs"
+        app:layout_constraintLeft_toRightOf="@id/et_pbs" />
+
+    <ImageView
+        android:id="@+id/btn_increase_naoh"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_naoh"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_naoh" />
+
+    <EditText
+        android:id="@+id/et_naoh"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_naoh"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_naoh" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_naoh"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_naoh"
+        app:layout_constraintLeft_toRightOf="@id/et_naoh" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_jbzs2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbzs2"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jbzs2" />
+
+    <EditText
+        android:id="@+id/et_jbzs2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbzs2"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_jbzs2" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jbzs2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbzs2"
+        app:layout_constraintLeft_toRightOf="@id/et_jbzs2" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_jbsj2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbsj2"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jbsj2" />
+
+    <EditText
+        android:id="@+id/et_jbsj2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbsj2"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_jbsj2" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jbsj2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jbsj2"
+        app:layout_constraintLeft_toRightOf="@id/et_jbsj2" />
+
+    <ImageView
+        android:id="@+id/btn_increase_ch3oh"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_ch3oh"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_ch3oh" />
+
+    <EditText
+        android:id="@+id/et_ch3oh"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_ch3oh"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_ch3oh" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_ch3oh"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_ch3oh"
+        app:layout_constraintLeft_toRightOf="@id/et_ch3oh" />
+
+    <ImageView
+        android:id="@+id/btn_increase_hhsj1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhsj1"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_hhsj1" />
+
+    <EditText
+        android:id="@+id/et_hhsj1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhsj1"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhsj1" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_hhsj1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhsj1"
+        app:layout_constraintLeft_toRightOf="@id/et_hhsj1" />
+
+    <ImageView
+        android:id="@+id/btn_increase_hhs2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhs2"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_hhs2" />
+
+    <EditText
+        android:id="@+id/et_hhs2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhs2"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhs2" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_hhs2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhs2"
+        app:layout_constraintLeft_toRightOf="@id/et_hhs2" />
+
+    <ImageView
+        android:id="@+id/btn_increase_hhzy2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhzy2"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_hhzy2" />
+
+    <EditText
+        android:id="@+id/et_hhzy2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhzy2"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhzy2" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_hhzy2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhzy2"
+        app:layout_constraintLeft_toRightOf="@id/et_hhzy2" />
+
+    <ImageView
+        android:id="@+id/btn_increase_hhsj2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhsj2"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_hhsj2" />
+
+    <EditText
+        android:id="@+id/et_hhsj2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhsj2"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhsj2" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_hhsj2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhsj2"
+        app:layout_constraintLeft_toRightOf="@id/et_hhsj2" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_syyby"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syyby"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_syyby" />
+
+    <EditText
+        android:id="@+id/et_syyby"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syyby"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_syyby" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_syyby"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syyby"
+        app:layout_constraintLeft_toRightOf="@id/et_syyby" />
+
+    <ImageView
+        android:id="@+id/btn_increase_syzy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syzy"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_syzy" />
+
+    <EditText
+        android:id="@+id/et_syzy"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syzy"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_syzy" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_syzy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syzy"
+        app:layout_constraintLeft_toRightOf="@id/et_syzy" />
+
+    <ImageView
+        android:id="@+id/btn_increase_sysj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_sysj"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_sysj" />
+
+    <EditText
+        android:id="@+id/et_sysj"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_sysj"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_sysj" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_sysj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_sysj"
+        app:layout_constraintLeft_toRightOf="@id/et_sysj" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_sycs"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_sycs"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_sycs" />
+
+    <EditText
+        android:id="@+id/et_sycs"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_sycs"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_sycs" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_sycs"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_sycs"
+        app:layout_constraintLeft_toRightOf="@id/et_sycs" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_jhs"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhs"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jhs" />
+
+    <EditText
+        android:id="@+id/et_jhs"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhs"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhsj1" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jhs"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhs"
+        app:layout_constraintLeft_toRightOf="@id/et_jhs" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_jhzy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhzy"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jhzy" />
+
+    <EditText
+        android:id="@+id/et_jhzy"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhzy"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_jhzy" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jhzy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhzy"
+        app:layout_constraintLeft_toRightOf="@id/et_jhzy" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_jhsj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhsj"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_jhsj" />
+
+    <EditText
+        android:id="@+id/et_jhsj"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhsj"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_jhsj" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_jhsj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_jhsj"
+        app:layout_constraintLeft_toRightOf="@id/et_jhsj" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_c4h8o2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_c4h8o2"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_c4h8o2" />
+
+    <EditText
+        android:id="@+id/et_c4h8o2"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_c4h8o2"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_c4h8o2" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_c4h8o2"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_c4h8o2"
+        app:layout_constraintLeft_toRightOf="@id/et_c4h8o2" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_xtzy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_xtzy"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_xtzy" />
+
+    <EditText
+        android:id="@+id/et_xtzy"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_xtzy"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_xtzy" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_xtzy"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_xtzy"
+        app:layout_constraintLeft_toRightOf="@id/et_xtzy" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_xtsj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_xtsj"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_xtsj" />
+
+    <EditText
+        android:id="@+id/et_xtsj"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_xtsj"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_xtsj" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_xtsj"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_xtsj"
+        app:layout_constraintLeft_toRightOf="@id/et_xtsj" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_nsfywd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_nsfywd"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_nsfywd" />
+
+    <EditText
+        android:id="@+id/et_nsfywd"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_nsfywd"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_nsfywd" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_nsfywd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_nsfywd"
+        app:layout_constraintLeft_toRightOf="@id/et_nsfywd" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_nscqwd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_nscqwd"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_nscqwd" />
+
+    <EditText
+        android:id="@+id/et_nscqwd"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_nscqwd"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_nscqwd" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_nscqwd"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_nscqwd"
+        app:layout_constraintLeft_toRightOf="@id/et_nscqwd" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_dmso"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_dmso"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_dmso" />
+
+    <EditText
+        android:id="@+id/et_dmso"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_dmso"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_dmso" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_dmso"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_dmso"
+        app:layout_constraintLeft_toRightOf="@id/et_dmso" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_syyben"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syyben"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_syyben" />
+
+    <EditText
+        android:id="@+id/et_syyben"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syyben"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_syyben" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_syyben"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_syyben"
+        app:layout_constraintLeft_toRightOf="@id/et_syyben" />
+
+
+    <TextView
+        android:id="@+id/tv_title_hhsj1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="活化时间1(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_hhzy1" />
+
+    <TextView
+        android:id="@+id/tv_title_hhs2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="活化水2(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_hhsj1" />
+
+    <TextView
+        android:id="@+id/tv_title_hhzy2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="活化正压2(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_hhs2" />
+
+    <TextView
+        android:id="@+id/tv_title_hhsj2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="活化时间2(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_hhzy2" />
+
+    <TextView
+        android:id="@+id/tv_title_syyby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="上样样本液(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_hhsj2" />
+
+    <TextView
+        android:id="@+id/tv_title_syzy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="上样正压  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_syyby" />
+
+    <TextView
+        android:id="@+id/tv_title_sysj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="上样时间  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_syzy" />
+
+    <TextView
+        android:id="@+id/tv_title_sycs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="上样次数  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_sysj" />
+
+    <TextView
+        android:id="@+id/tv_title_jhs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="净化水(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_fywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_sycs" />
+
+
+    <ImageView
+        android:id="@+id/btn_increase_hhzy1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:src="@mipmap/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhzy1"
+        app:layout_constraintLeft_toRightOf="@id/tv_title_hhzy1" />
+
+
+    <EditText
+        android:id="@+id/et_hhzy1"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        android:digits="0123456789"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hhzy1"
+        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhzy1" />
+
+    <ImageView
+        android:id="@+id/btn_decrease_hhzy1"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@mipmap/less"
+        app:layout_constraintBottom_toBottomOf="@+id/et_hhzy1"
+        app:layout_constraintLeft_toRightOf="@id/et_hhzy1" />
+
+    <TextView
+        android:id="@+id/tv_title_jhzy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="净化正压(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_title_jhsj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="净化时间(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_jhzy" />
+
+    <TextView
+        android:id="@+id/tv_title_c4h8o2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="乙酸乙酯(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_jhsj" />
+
+    <TextView
+        android:id="@+id/tv_title_xtzy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="洗脱正压(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_c4h8o2" />
+
+
+    <TextView
+        android:id="@+id/tv_title_xtsj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="洗脱时间(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_xtzy" />
+
+    <TextView
+        android:id="@+id/tv_title_nsfywd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="浓缩孵育温度(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_xtsj" />
+
+    <TextView
+        android:id="@+id/tv_title_nscqwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="浓缩吹气温度(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_nsfywd" />
+
+    <TextView
+        android:id="@+id/tv_title_nssj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="浓缩吹气温度(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_nsfywd" />
+
+    <TextView
+        android:id="@+id/tv_title_dmso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="DMSO样本容量(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_nssj" />
+
+    <TextView
+        android:id="@+id/tv_title_syyben"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="上样样本液值(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_dmso" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

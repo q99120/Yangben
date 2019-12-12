@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/com_bgs"
+    tools:context=".ui.activity.HomeActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/green"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_acid_ph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:text="孔雀石绿设置"
+        android:textColor="@color/rad"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_kq_c2h3n"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="乙腈(0~99 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+    <TextView
+        android:id="@+id/tv_kq_jbzs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="搅拌转速(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_c2h3n" />
+
+    <TextView
+        android:id="@+id/tv_kq_jbsj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="搅拌时间(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_jbzs" />
+
+    <TextView
+        android:id="@+id/tv_kq_hhzy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="活化正压(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_jbsj" />
+
+    <TextView
+        android:id="@+id/tv_kq_hhsj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="活化时间(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_hhzy" />
+
+    <TextView
+        android:id="@+id/tv_kq_syyby"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="上样样本液(0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_hhsj" />
+
+    <TextView
+        android:id="@+id/tv_title_syzy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="上样正压  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_syyby" />
+
+    <TextView
+        android:id="@+id/tv_kq_sysj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="上样时间  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_syzy" />
+
+
+    <TextView
+        android:id="@+id/tv_kq_sycs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="上样次数  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_sysj" />
+
+
+    <EditText
+        android:id="@+id/et_c2h3n"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:digits="0123456789"
+        android:background="@drawable/et_bgs"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@+id/tv_kq_c2h3n"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_kq_c2h3n" />
+
+
+    <TextView
+        android:id="@+id/tv_kq_nsfywd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="浓缩孵育温度  (0~60 ):"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toRightOf="@id/et_c2h3n"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_kq_c2h3n" />
+
+    <TextView
+        android:id="@+id/tv_kq_nssj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="浓缩时间  (0~60 ):"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/tv_kq_nsfywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_nsfywd" />
+
+    <TextView
+        android:id="@+id/tv_kq_ybrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="样本容量  (0~60 ):"
+        android:layout_margin="15dp"
+        android:textColor="@color/black"
+        app:layout_constraintLeft_toLeftOf="@id/tv_kq_nsfywd"
+        app:layout_constraintTop_toBottomOf="@+id/tv_kq_nssj" />
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/btn_increase_hhzy1"-->
+    <!--        android:layout_width="25dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:layout_marginLeft="15dp"-->
+    <!--        android:src="@mipmap/plus"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/tv_kq_hhzy1"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/tv_kq_hhzy1" />-->
+
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/et_hhzy1"-->
+    <!--        android:layout_width="40dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_centerInParent="true"-->
+    <!--        android:background="@null"-->
+    <!--        android:digits="0123456789"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/tv_kq_hhzy1"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/btn_increase_hhzy1" />-->
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/btn_decrease_hhzy1"-->
+    <!--        android:layout_width="25dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:src="@mipmap/less"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/et_hhzy1"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/et_hhzy1" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_kq_nsfywd"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--        android:text="浓缩孵育温度(0~60 ):"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_title_xtsj" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_title_nscqwd"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--        android:text="浓缩吹气温度(0~60 ):"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_kq_nsfywd" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_kq_nssj"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--        android:text="浓缩吹气温度(0~60 ):"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_kq_nsfywd" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_title_dmso"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--        android:text="DMSO样本容量(0~60 ):"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_kq_nssj" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tv_title_syyben"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="15dp"-->
+    <!--        android:text="上样样本液值(0~60 ):"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        app:layout_constraintLeft_toRightOf="@id/btn_decrease_hhzy1"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_title_dmso" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

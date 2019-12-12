@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="medal">
+        <item>呋喃四项</item>
+        <item>孔雀石绿</item>
+        <item>瘦肉精类</item>
+    </string-array>
+</resources>

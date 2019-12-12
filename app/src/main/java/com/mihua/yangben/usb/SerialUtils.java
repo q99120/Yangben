@@ -17,6 +17,7 @@ import java.io.OutputStream;
 
 import android_serialport_api.SerialPort;
 
+import static com.mihua.yangben.usb.util.HexUtils.hexToByteArray;
 import static com.mihua.yangben.utils.SimpleUtils.json0;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheck16;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheckSum;
@@ -105,6 +106,7 @@ public class SerialUtils {
                 String content_16 = makeCheck16(check_sum);
                 String _check_sum = makeCheckSum(check_sum);
                 String total = head + content_16 + _check_sum;
+                WriteByte(hexToByteArray(total));
                 Log.e(TAG, "获取总数据: " + total);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -128,6 +130,7 @@ public class SerialUtils {
                 String _checkSum = makeCheckSum(sum);
                 String content_16 = makeCheck16(sum);
                 String total = head + content_16 + _checkSum;
+                WriteByte(hexToByteArray(total));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -164,6 +167,7 @@ public class SerialUtils {
                 String content_16 = makeCheck16(check_sum);
                 String _check_sum = makeCheckSum(check_sum);
                 String total = head + content_16 + _check_sum;
+                WriteByte(hexToByteArray(total));
                 Log.e(TAG, "获取总数据: " + total);
             } catch (JSONException e) {
                 e.printStackTrace();

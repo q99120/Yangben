@@ -25,7 +25,7 @@ public class Contacts {
 
 
     public static String kq_json =
-            "[{\"solven_name\":\"乙晴用量(ml)\",\"solven_num\":0},{\"solven_name\":\"搅拌转速(RPM)\",\"solven_num\":1}," +
+            "[{\"solven_name\":\"乙腈用量(ml)\",\"solven_num\":0},{\"solven_name\":\"搅拌转速(RPM)\",\"solven_num\":1}," +
                     "{\"solven_name\":\"搅拌时间(分钟)\",\"solven_num\":2},{\"solven_name\":\"氢氧化钠用量(ml)\",\"solven_num\":2}," +
                     "{\"solven_name\":\"排液量1(ml)\",\"solven_num\":3},{\"solven_name\":\"上样用量(ml)\",\"solven_num\":4}," +
                     "{\"solven_name\":\"浓缩温度(摄氏度)\",\"solven_num\":9},{\"solven_name\":\"吹气温度(摄氏度)\",\"solven_num\":10}," +
@@ -35,10 +35,10 @@ public class Contacts {
     public static String sr_json =
             " [{\"solven_name\":\"乙酸盐缓冲液用量(ml)\",\"solven_num\":35},{\"solven_name\":\"孵育温度(摄氏度)\",\"solven_num\":2}," +
                     "{\"solven_name\":\"搅拌转速(RPM)\",\"solven_num\":4},{\"solven_name\":\"搅拌时间(分钟)\",\"solven_num\":5}, " +
-                    "{\"solven_name\":\"甲醇用量(ml)\",\"solven_num\":6},{\"solven_name\":\"排液量1(ml)\",\"solven_num\":7}," +
+                    "{\"solven_name\":\"甲醇用量1(ml)\",\"solven_num\":6},{\"solven_name\":\"排液量1(ml)\",\"solven_num\":7}," +
                     "{\"solven_name\":\"水用量(ml)\",\"solven_num\":8},{\"solven_name\":\"排液量2(ml)\",\"solven_num\":9}," +
                     "{\"solven_name\":\"高氯酸用量(ml)\",\"solven_num\":10},{\"solven_name\":\"排液量3(ml)\",\"solven_num\":11}," +
-                    "{\"solven_name\":\"上样用量(ml)\",\"solven_num\":12},{\"solven_name\":\"甲醇用量(ml)\",\"solven_num\":13}," +
+                    "{\"solven_name\":\"上样用量(ml)\",\"solven_num\":12},{\"solven_name\":\"甲醇用量2(ml)\",\"solven_num\":13}," +
                     "{\"solven_name\":\"排液量4(ml)\",\"solven_num\":14},{\"solven_name\":\"甲醇水溶液用量(ml)\",\"solven_num\":15}," +
                     "{\"solven_name\":\"排液量5(ml)\",\"solven_num\":16},{\"solven_name\":\"氨化甲醇用量(ml)\",\"solven_num\":17}," +
                     "{\"solven_name\":\"排液量6(ml)\",\"solven_num\":18}]\n";

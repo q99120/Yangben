@@ -17,7 +17,6 @@ import java.io.OutputStream;
 
 import android_serialport_api.SerialPort;
 
-import static com.mihua.yangben.usb.util.HexUtils.hexToByte;
 import static com.mihua.yangben.utils.SimpleUtils.json0;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheck16;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheckSum;
@@ -110,33 +109,62 @@ public class SerialUtils {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+        } else if (sample_flag == 2) {
+            try {
+                JSONObject jt = new JSONObject(datas);
+                String head = "ff6c1a";
+                String yjyl = json0(jt.getString("乙腈用量(ml)"));
+                String jbzs = json0(jt.getString("搅拌转速(RPM)"));
+                String jbsj = json0(jt.getString("搅拌时间(分钟)"));
+                String qyhn = json0(jt.getString("氢氧化钠用量(ml)"));
+                String pyl = json0(jt.getString("排液量1(ml)"));
+                String o1 = "00";
+                String syyl = json0(jt.getString("上样用量(ml)"));
+                String o2 = "0000";
+                String nswd = json0(jt.getString("浓缩温度(摄氏度)"));
+                String cqwd = json0(jt.getString("吹气温度(摄氏度)"));
+                String nssj = json0(jt.getString("浓缩时间(分钟)"));
+                String sum = yjyl + jbzs + jbsj + qyhn + pyl + o1 + syyl + o2 + nswd + cqwd + nssj;
+                String _checkSum = makeCheckSum(sum);
+                String content_16 = makeCheck16(sum);
+                String total = head + content_16 + _checkSum;
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
         } else {
             try {
-                JSONObject jsonObject = new JSONObject(datas);
-                byte[] result = new byte[22];
-                result[0] = 0x6e;
-                result[1] = hexToByte(jsonObject.getString("样本乙腈"));
-                result[2] = 0x00;
-                result[3] = 0x00;
-                result[4] = 0x00;
-                result[5] = hexToByte(jsonObject.getString("搅拌转速"));
-                result[6] = hexToByte(jsonObject.getString("搅拌时间"));
-                result[7] = hexToByte(jsonObject.getString("过柱乙腈"));
-                result[8] = hexToByte(jsonObject.getString("活化正压"));
-                result[9] = hexToByte(jsonObject.getString("活化时间"));
-                result[10] = 0x00;
-                result[11] = hexToByte(jsonObject.getString("上样样本液"));
-                result[12] = hexToByte(jsonObject.getString("上样正压"));
-                result[13] = hexToByte(jsonObject.getString("上样时间"));
-                result[14] = hexToByte(jsonObject.getString("上样次数"));
-                result[15] = hexToByte(jsonObject.getString("浓缩孵育温度"));
-                result[16] = hexToByte(jsonObject.getString("浓缩吹气温度"));
-                result[17] = hexToByte(jsonObject.getString("浓缩时间"));
-                result[18] = hexToByte(jsonObject.getString("上样样本液吸取值"));
-                result[19] = hexToByte(Integer.toHexString(data_size));
-                result[20] = 0x0d;
-                result[21] = 0x0a;
-                WriteByte(result);
+                JSONObject jt = new JSONObject(datas);
+                String head = "ff6d1a";
+                String _hcl = json0(jt.getString("乙酸盐缓冲液用量(ml)"));
+                String _fywd = json0(jt.getString("孵育温度(摄氏度)"));
+                String _jbzs = json0(jt.getString("搅拌转速(RPM)"));
+                String _jbsj = json0(jt.getString("搅拌时间(分钟)"));
+                String _jc1 = json0(jt.getString("甲醇用量(ml)"));
+                String _pyl1 = json0(jt.getString("排液量1(ml)"));
+                String oo1 = "00";
+                String _syl1 = json0(jt.getString("水用量1(ml)"));
+                String _pyl2 = json0(jt.getString("排液量2(ml)"));
+                String oo2 = "00";
+                String _gls = json0(jt.getString("高氯酸用量(ml)"));
+                String _pyl3 = json0(jt.getString("排液量3(ml)"));
+                String oo3 = "00";
+                String _syyl = json0(jt.getString("上样用量(ml)"));
+                String oo4 = "0000";
+                String _jc2 = json0(jt.getString("甲醇用量2(ml)"));
+                String _pyl4 = json0(jt.getString("排液量4(ml)"));
+                String oo5 = "00";
+                String _jcsry = json0(jt.getString("甲醇水溶液用量(ml)"));
+                String _pyl5 = json0(jt.getString("排液量5(ml)"));
+                String oo6 = "00";
+                String _ahjc = json0(jt.getString("氨化甲醇用量(ml)"));
+                String _pyl6 = json0(jt.getString("排液量6(ml)"));
+                String oo7 = "00";
+                String check_sum = _hcl + _fywd + _jbzs + _jbsj + _jc1 + _pyl1 + oo1 + _syl1 + _pyl2 + oo2 + _gls + _pyl3 + oo3 + _syyl +
+                        oo4 + _jc2 + _pyl4 + oo5 + _jcsry + _pyl5 + oo6 + _ahjc + _pyl6 + oo7;
+                String content_16 = makeCheck16(check_sum);
+                String _check_sum = makeCheckSum(check_sum);
+                String total = head + content_16 + _check_sum;
+                Log.e(TAG, "获取总数据: " + total);
             } catch (JSONException e) {
                 e.printStackTrace();
             }

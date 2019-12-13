@@ -84,17 +84,17 @@ public class HexUtils {
             throw new IllegalArgumentException(
                     "Argument b ( byte array ) is null! ");
         }
-        String hs = "";
+        StringBuilder hs = new StringBuilder();
         String stmp = "";
         for (int n = 0; n < b.length; n++) {
             stmp = Integer.toHexString(b[n] & 0xff);
             if (stmp.length() == 1) {
-                hs = hs + "0" + stmp;
+                hs.append("0").append(stmp);
             } else {
-                hs = hs + stmp;
+                hs.append(stmp);
             }
         }
-        return hs.toUpperCase();
+        return hs.toString().toUpperCase();
     }
 
 }

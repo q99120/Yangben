@@ -17,6 +17,7 @@ import java.io.OutputStream;
 
 import android_serialport_api.SerialPort;
 
+import static com.mihua.yangben.usb.util.HexUtils.byte2hex;
 import static com.mihua.yangben.usb.util.HexUtils.hex2byte;
 import static com.mihua.yangben.utils.SimpleUtils.json0;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheck16;
@@ -207,9 +208,8 @@ public class SerialUtils {
 
                         //读到的数据建议设立缓存，不能保证一次完整发送一包，有时会2次发一个
                         //stringBuffer2.append(result2);
-                        String s = TransformUtils.bytesToHexStringWithOx(buffer2, size2);
-                        EventBus.getDefault().post(new SerialMessage(s));
-                        split = s.split(" ");
+                        String result = byte2hex(buffer2);
+                        EventBus.getDefault().post(new SerialMessage(result));
                     } else {
                         Log.i("tagtest", "未读到串口3返回的数据");
                     }

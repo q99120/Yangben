@@ -24,6 +24,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.mihua.yangben.R;
+import com.mihua.yangben.app.Contacts;
 import com.mihua.yangben.bean.SampleList;
 import com.mihua.yangben.bean.SerialMessage;
 import com.mihua.yangben.datepicker.DateFormatUtils;
@@ -202,6 +203,9 @@ public class DataProcessingFm extends Fragment implements UpData {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
+                case Contacts.SEND:
+                    saveRecord();
+                    break;
                 case 1:
                     byte[] result = new byte[]{0x6c, 0x1a, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x01, 0x01, 0x05, 0x01, 0x05};
                     SerialUtils.getInstance().WriteByte(result);
@@ -467,18 +471,14 @@ public class DataProcessingFm extends Fragment implements UpData {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void SerialEvent(SerialMessage msg) {
         String receive_str = msg.getSerialMsg();
-        Log.e("jajaj", "SerialEvent: " + "serrr" + msg.getSerialMsg());
-        StringBuilder sb = new StringBuilder();
-        sb.append(receive_str);
-        prompt.setText(sb.toString());
-        split = receive_str.split(" ");
-        if (split[1].equals("0x6b") || split[1].equals("0x6f")) {
-            if (split.length > 30) {
+        prompt.setText(receive_str);
+        if (receive_str.substring(2, 4).equals("6d")) {
                 if (mdialog != null) {
-                    mhandler.sendEmptyMessage(10);
-                }
+                    if (receive_str.substring(6, 8).equals("01")) {
+                        Toast.makeText(getActivity(), "设置成功", Toast.LENGTH_SHORT).show();
+                    }
             }
-        } else if (split[1].equals("0x6e") && split[2].equals("0x0")) {
+        } else if (receive_str.substring(2, 4).equals("6f")) {
 //            hisData();
             mhandler.sendEmptyMessageDelayed(2, 3000);
         } else if (split[1].equals("0x6c") & split.length == 17) {
@@ -810,7 +810,7 @@ public class DataProcessingFm extends Fragment implements UpData {
         public void onPositiveButtonClick(AlertDialog dialog, String name, int index, String sampleNumber, String oldSampleNumer) {
             mdialog = dialog;
             if (dialog_flag == 4) {
-                saveRecord();
+                mhandler.sendEmptyMessage(Contacts.SEND);
             } else if (dialog_flag == 5) {
 //           if (isstop) {
 //               byte[] result = new byte[]{0x1b};

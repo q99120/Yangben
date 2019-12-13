@@ -1,6 +1,7 @@
 package com.mihua.yangben.app;
 
 public class Contacts {
+    public static final int SEND = 100;
     /**
      * 固定呋喃四项数据源
      */

@@ -100,7 +100,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onResume() {
         Log.e("onResume1", "onResume: " + SerialUtils.serialPortStatus);
         if (!SerialUtils.serialPortStatus) {
-//            SerialUtils.getInstance().OpenSerial();
+            SerialUtils.getInstance().OpenSerial();
         }
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);

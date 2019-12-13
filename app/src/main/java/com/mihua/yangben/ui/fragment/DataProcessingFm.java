@@ -40,7 +40,6 @@ import com.mihua.yangben.usb.SerialUtils;
 import com.mihua.yangben.utils.SPUtils;
 import com.mihua.yangben.utils.SimpleUtils;
 import com.mihua.yangben.view.AlertDialogUtils;
-import com.orhanobut.logger.Logger;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -481,31 +480,6 @@ public class DataProcessingFm extends Fragment implements UpData {
         } else if (receive_str.substring(2, 4).equals("6f")) {
 //            hisData();
             mhandler.sendEmptyMessageDelayed(2, 3000);
-        } else if (split[1].equals("0x6c") & split.length == 17) {
-            Logger.e("查询成功");
-            Message msg1 = Message.obtain();
-            msg1.obj = split;
-            msg1.what = 11;
-            // Logger.e("查询温度"+Integer.parseInt("1a",16));
-            mhandler.sendMessage(msg1);
-        } else if (split[1].equals("0x1a")) {
-            mhandler.sendEmptyMessage(11);
-        } else if (split[1].equals("0x1b")) {
-            mhandler.sendEmptyMessage(12);
-        } else if (split[1].equals("0x6c")) {
-            if (start_flag) {
-                if (receive_flag < 27) {
-                    receive_flag += 1;
-                } else {
-                    receive_flag = 15;
-                }
-                Message message = Message.obtain();
-                message.obj = split;
-                message.what = receive_flag;
-                if (mhandler != null) {
-                    mhandler.sendMessageDelayed(message, 500);
-                }
-            }
         } else {
             if (mdialog != null)
                 mdialog.dismiss();

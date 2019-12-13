@@ -17,7 +17,7 @@ import java.io.OutputStream;
 
 import android_serialport_api.SerialPort;
 
-import static com.mihua.yangben.usb.util.HexUtils.hexToByteArray;
+import static com.mihua.yangben.usb.util.HexUtils.hex2byte;
 import static com.mihua.yangben.utils.SimpleUtils.json0;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheck16;
 import static com.mihua.yangben.utils.SimpleUtils.makeCheckSum;
@@ -71,10 +71,10 @@ public class SerialUtils {
     /**
      * 解析数据
      */
-    public void ParseData(int sample_flag, int data_size, String datas) {
-        if (sample_flag == 1) {
-            try {
-                JSONObject jt = new JSONObject(datas);
+    public void ParseData(int sample_flag, String datas) {
+        try {
+            JSONObject jt = new JSONObject(datas);
+            if (sample_flag == 1) {
                 String head = "ff6b1a";
                 String _hcl = json0(jt.getString("盐酸用量(ml)"));
                 String _fywd = json0(jt.getString("孵育温度(摄氏度)"));
@@ -106,15 +106,10 @@ public class SerialUtils {
                 String content_16 = makeCheck16(check_sum);
                 String _check_sum = makeCheckSum(check_sum);
                 String total = head + content_16 + _check_sum;
-                WriteByte(hexToByteArray(total));
-                Log.e(TAG, "获取总数据: " + total);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else if (sample_flag == 2) {
-            try {
-                JSONObject jt = new JSONObject(datas);
-                String head = "ff6c1a";
+                byte[] c = hex2byte(total);
+                WriteByte(c);
+            } else if (sample_flag == 2) {
+                String head = "ff6c0b";
                 String yjyl = json0(jt.getString("乙腈用量(ml)"));
                 String jbzs = json0(jt.getString("搅拌转速(RPM)"));
                 String jbsj = json0(jt.getString("搅拌时间(分钟)"));
@@ -130,22 +125,19 @@ public class SerialUtils {
                 String _checkSum = makeCheckSum(sum);
                 String content_16 = makeCheck16(sum);
                 String total = head + content_16 + _checkSum;
-                WriteByte(hexToByteArray(total));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        } else {
-            try {
-                JSONObject jt = new JSONObject(datas);
-                String head = "ff6d1a";
+                Log.e(TAG, "获取总数据2 " + total);
+                byte[] c = hex2byte(total);
+                WriteByte(c);
+            } else {
+                String head = "ff6d18";
                 String _hcl = json0(jt.getString("乙酸盐缓冲液用量(ml)"));
                 String _fywd = json0(jt.getString("孵育温度(摄氏度)"));
                 String _jbzs = json0(jt.getString("搅拌转速(RPM)"));
                 String _jbsj = json0(jt.getString("搅拌时间(分钟)"));
-                String _jc1 = json0(jt.getString("甲醇用量(ml)"));
+                String _jc1 = json0(jt.getString("甲醇用量1(ml)"));
                 String _pyl1 = json0(jt.getString("排液量1(ml)"));
                 String oo1 = "00";
-                String _syl1 = json0(jt.getString("水用量1(ml)"));
+                String _syl1 = json0(jt.getString("水用量(ml)"));
                 String _pyl2 = json0(jt.getString("排液量2(ml)"));
                 String oo2 = "00";
                 String _gls = json0(jt.getString("高氯酸用量(ml)"));
@@ -167,11 +159,12 @@ public class SerialUtils {
                 String content_16 = makeCheck16(check_sum);
                 String _check_sum = makeCheckSum(check_sum);
                 String total = head + content_16 + _check_sum;
-                WriteByte(hexToByteArray(total));
-                Log.e(TAG, "获取总数据: " + total);
-            } catch (JSONException e) {
-                e.printStackTrace();
+//
+                byte[] c = hex2byte(total);
+                WriteByte(c);
             }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 

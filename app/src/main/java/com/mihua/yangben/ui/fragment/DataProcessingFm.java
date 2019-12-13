@@ -185,6 +185,8 @@ public class DataProcessingFm extends Fragment implements UpData {
     private String four_funan_json;
     //孔雀石绿
     private String malachite_green_json;
+    //瘦肉精类
+    private String sr_json;
     //对话框的flag
     private int dialog_flag;
     int receive_flag;
@@ -594,8 +596,33 @@ public class DataProcessingFm extends Fragment implements UpData {
             case R.id.determine:
                 channelNum = Integer.parseInt(etAmount.getText().toString().trim());
                 sampleName = spreadProject.getSelectedItem().toString();
-                include_samplepro.setVisibility(View.INVISIBLE);
-                include_datapro.setVisibility(View.VISIBLE);
+                if (getActivity() != null) {
+                    four_funan_json = SPUtils.getString(getActivity(), "map_funan_json", "");
+                    malachite_green_json = SPUtils.getString(getActivity(), "map_kq_json", "");
+                    sr_json = SPUtils.getString(getActivity(), "map_sr_json", "");
+                }
+                if (sampleName.equals("呋喃四项")) {
+                    if (four_funan_json.equals("")) {
+                        Toast.makeText(getActivity(), "还未设置呋喃四项容量值，请前往设置", Toast.LENGTH_SHORT).show();
+                    } else {
+                        include_samplepro.setVisibility(View.INVISIBLE);
+                        include_datapro.setVisibility(View.VISIBLE);
+                    }
+                } else if (sampleName.equals("孔雀石绿")) {
+                    if (malachite_green_json.equals("")) {
+                        Toast.makeText(getActivity(), "还未设置孔雀石绿容量值，请前往设置", Toast.LENGTH_SHORT).show();
+                    } else {
+                        include_samplepro.setVisibility(View.INVISIBLE);
+                        include_datapro.setVisibility(View.VISIBLE);
+                    }
+                } else {
+                    if (sr_json.equals("")) {
+                        Toast.makeText(getActivity(), "还未设置瘦肉精类容量值，请前往设置", Toast.LENGTH_SHORT).show();
+                    } else {
+                        include_samplepro.setVisibility(View.INVISIBLE);
+                        include_datapro.setVisibility(View.VISIBLE);
+                    }
+                }
                 initData();
                 break;
             case R.id.btnDecrease:
@@ -735,21 +762,10 @@ public class DataProcessingFm extends Fragment implements UpData {
 
     }
 
-    String sr_json;
 
     private void dialog_start() {
-        four_funan_json = SPUtils.getString(getActivity(), "map_funan_json", "");
-        malachite_green_json = SPUtils.getString(getActivity(), "map_kq_json", "");
-        sr_json = SPUtils.getString(getActivity(), "map_sr_json", "");
-        if (four_funan_json.equals("")) {
-            Toast.makeText(getActivity(), "还未设置呋喃四项容量值，请前往设置", Toast.LENGTH_SHORT).show();
-        } else if (malachite_green_json.equals("")) {
-            Toast.makeText(getActivity(), "还未设置孔雀石绿容量值，请前往设置", Toast.LENGTH_SHORT).show();
-        } else if (sr_json.equals("")) {
-            Toast.makeText(getActivity(), "还未设置瘦肉精类容量值，请前往设置", Toast.LENGTH_SHORT).show();
-        } else {
-            utils.showStartDialog(getActivity());
-        }
+        utils.showStartDialog(getActivity());
+
         //按钮点击监听
     }
 
@@ -779,13 +795,11 @@ public class DataProcessingFm extends Fragment implements UpData {
         mhandler.sendEmptyMessageDelayed(3, 6000);
 
         if (sampleName.equals("呋喃四项")) {
-            SerialUtils.getInstance().ParseData(1, sampleLists.size(), four_funan_json);
+            SerialUtils.getInstance().ParseData(1, four_funan_json);
         } else if (sampleName.equals("孔雀石绿")) {
-            if (malachite_green_json.equals("")) {
-                SerialUtils.getInstance().ParseData(2, sampleLists.size(), malachite_green_json);
-            } else {
-                Toast.makeText(getActivity(), "还未设置孔雀石绿容量值，请前往设置", Toast.LENGTH_SHORT).show();
-            }
+            SerialUtils.getInstance().ParseData(2, malachite_green_json);
+        } else {
+            SerialUtils.getInstance().ParseData(3, sr_json);
         }
 
     }

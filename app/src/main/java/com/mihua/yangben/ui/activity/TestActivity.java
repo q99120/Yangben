@@ -22,7 +22,7 @@ public class TestActivity extends Activity {
         Log.e("20的位数", "onCreate1: " + parseHex2Opposite(hex));
         Log.e("30的位数", "onCreate2: " + parseHex2Opposite(hex1));
         Log.e("50的位数", "onCreate2: " + parseHex2Opposite(hex + hex1 + hex2 + hex3));
-        SerialUtils.getInstance().ParseData(1, 1, Contacts.funan_json);
+        SerialUtils.getInstance().ParseData(1, Contacts.funan_json);
     }
 
     /**
